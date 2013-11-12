@@ -1,0 +1,15 @@
+{
+  "name": "hoodie-plugin-plugins",
+  "version": "0.0.0",
+  "description": "A database with all the hoodie plugins in it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan Shaw",
+  "license": "MIT",
+  "dependencies": {
+    "npm": "~1.3.14",
+    "couchwatch": "~0.6.0"
+  }
+}
