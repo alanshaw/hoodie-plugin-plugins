@@ -40,12 +40,9 @@ function watchAndUpdate (db, cb) {
   var watcher = couchwatch("http://isaacs.iriscouch.com/registry", -1)
 
   watcher.on("row", function (change) {
-    console.log(change)
     if (change.id.indexOf("hoodie-plugin-") != 0) {
       return console.log("Ignoring non hoodie plugin change", change.doc.name)
     }
-
-    console.log("Changed doc", change)
 
     if (change.deleted) {
       return db.remove("plugin", change.id, function (er) {
@@ -57,7 +54,6 @@ function watchAndUpdate (db, cb) {
     // Add or update the changed document
     db.find("plugin", change.id, function (er, doc) {
       if (er) console.warn(er)
-      console.log("Existing doc", doc)
 
       if (!doc) {
         return db.add("plugin", {
@@ -113,8 +109,6 @@ module.exports = function (hoodie, cb) {
 
   //hoodie.database.remove(dbName, function () {
 
-
-
   hoodie.database.findAll(function (er, dbs) {
     if (er) return cb(er)
 
@@ -137,8 +131,6 @@ module.exports = function (hoodie, cb) {
       watchAndUpdate(hoodie.database("hoodie-plugin-plugins"), cb)
     }
   })
-
-
 
   //})
 }
