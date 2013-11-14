@@ -1,4 +1,4 @@
-hoodie-plugin-plugins
+hoodie-plugin-plugins [![Dependency Status](https://david-dm.org/alanshaw/hoodie-plugin-plugins.png)](https://david-dm.org/alanshaw/hoodie-plugin-plugins)
 ===
 > A database with all the hoodie plugins in it.
 
